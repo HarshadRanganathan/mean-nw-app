@@ -1,0 +1,308 @@
+html, body {
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+.middle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.title-color-1 {
+  color: rgba(0,0,0,0.54);
+}
+
+.title-color-2 {
+  color: rgb(0,150,136);
+}
+
+.sticky-header {
+  position: fixed;
+  height: 20px;
+  width: 100%;
+  z-index: 10;
+}
+
+/* make buttons non-draggable */
+button {
+  -webkit-app-region: no-drag;
+}
+
+/* Webkit custom scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(0,150,136);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(0,150,136);
+    -webkit-box-shadow: inset 0 0 6px rgb(0,150,136);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	 background: rgb(0,150,136);
+}
+
+/* Toolbar area */
+
+.menu {
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  margin: 16px;
+  width: 36px;
+}
+
+md-toolbar h1 {
+  margin: auto;
+}
+
+/* Sidenav area */
+
+md-list md-item > .md-button {
+  color: inherit;
+  font-weight: normal;
+}
+
+md-item > p {
+  color: #009688;
+  padding: 7%;
+}
+
+md-list .md-button.selected {
+  color: #03a9f4;
+}
+
+md-sidenav  md-list {
+  padding: 0px 0px 8px 0px;
+}
+
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+    position: fixed;
+    height: 100vh;
+    width: 250px !important;
+}
+
+md-backdrop {
+  position: fixed !important;
+}
+
+/* Primary content area */
+
+#content {
+  overflow: hidden;
+}
+
+#content  {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+
+#content .md-button.share {
+  background-color: transparent;
+  border: none;
+  width: 48px;
+  height: 48px;
+  margin: 8px auto 16px 0;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+
+#content md-icon.avatar {
+  margin-top: 10px;
+}
+
+#content .md-button.share > md-icon {
+  fill:black;
+  width:36px;
+  height:36px;
+}
+
+md-button.menuBtn > md-icon {
+  fill:white;
+  width:24px;
+  height:24px;
+}
+
+#content .md-button.share:active > md-icon {
+  background-color: #dadada;
+  border-radius: 75%;
+  padding:4px;
+  transition: all 100ms ease-out 30ms;
+}
+
+#content img {
+  display: block;
+  height: auto;
+  max-width: 500px;
+}
+
+/* card */
+
+md-card md-card-content {
+    display: block;
+    padding: 0px 16px 16px 16px;
+}
+
+md-list {
+    display: block;
+    padding: 0px 0px 8px 0px;
+}
+
+/* Utils */
+
+.content-wrapper {
+  position: relative;
+}
+
+/* Typography support coming in 0.8.0 */
+
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+}
+
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+
+
+md-bottom-sheet  md-icon {
+  margin-right:20px;
+}
+
+span.name {
+  font-weight: bold;
+  font-size:1.1em;
+  padding-left:5px;
+}
+
+/* header design */
+
+.header {
+  margin: 5px 0 0 0;
+  color : rgb(82, 101, 162);
+}
+
+h2, h3 {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  text-align: left;
+}
+
+p {
+  margin: 14px 0 14px 0;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: left;
+}
+
+.light {
+  color : rgba(0,0,0,0.54);
+  font-size: 12px;
+  margin: 0;
+}
+
+ng-md-icon {
+  vertical-align: middle;
+}
+
+/* custom styles */
+md-divider[md-inset] {
+    margin-left: 0; !important
+}
+
+.angular-with-newlines {
+  white-space: pre;
+}
+
+/* md chips styling */
+.md-chips {
+ font-size: 12px; !important
+}
+
+/* autocomplete dropdown styling */
+.md-virtual-repeat-container.md-autocomplete-suggestions-container {
+     width:300px !important;
+}
+
+/* fix floating action button to bottom right */
+.md-button.md-fab.md-fab-bottom-right {
+  line-height: 70px; !important
+  top: auto;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  position: fixed;
+}
+
+/* group user tab styles */
+.user-avatar {
+  border-radius: 99%;
+  margin-right: 5px;
+}
+
+/* text overflow fix */
+div { word-wrap: break-word; }
+
+/* label styles*/
+.label {
+  vertical-align: middle;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  background-color: rgb(0,150,136);
+  border-color: rgb(0,150,136);
+  padding: 3px 5px;
+  margin-left: 4px;
+}
+
+.label-right {
+  float: right;
+  border-radius: 2px;
+  font-size: 12px;
+  color: #fff;
+  background-color: rgb(0,150,136);
+  border-color: rgb(0,150,136);
+  padding: 4px;
+}
+
+/* grid styles */
+md-grid-list md-grid-tile md-grid-tile-header, md-grid-list md-grid-tile md-grid-tile-footer {
+  background: rgb(0,150,136);
+  opacity: 0.7;
+}
+
+.grid-text {
+  font-size: 350%;
+  color: rgb(82, 101, 162);
+}
+
+.gray {
+  background-color: #f2f2f2;
+}

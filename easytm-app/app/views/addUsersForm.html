@@ -1,0 +1,31 @@
+<md-dialog aria-label="Group dialog" style="width: 60%;" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add Users</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <form name="AddUsersForm" style="padding: 5%;">
+      <md-chips ng-model="users" md-autocomplete-snap>
+        <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="user in querySearch(searchText)" md-item-text="user.email"
+          md-delay=500 placeholder="Enter Employee Email">
+          <span md-highlight-text="searchText" md-highlight-flags="^i">{{user.email}}</span>
+        </md-autocomplete>
+        <md-chip-template>
+          <span>
+            {{$chip.email}}
+          </span>
+        </md-chip-template>
+      </md-chips>
+    </form>
+  </md-dialog-content>
+  <md-dialog-actions>
+    <md-button ng-click="closeDialog()" class="md-primary">
+      Cancel
+    </md-button>
+    <md-button ng-click="addNewUsersToGroup(users)" class="md-primary">
+      Add
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>

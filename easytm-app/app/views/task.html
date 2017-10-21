@@ -1,0 +1,101 @@
+<ng-include src="'app/views/sidenav.html'"></ng-include>
+
+<div layout="column" ng-init="init();">
+
+  <!-- Task add button -->
+  <md-button class="md-fab md-fab-bottom-right md-primary" aria-label="Add" ng-click="showNewTaskDialog($event)">
+    <ng-md-icon icon="add" style="fill: #fff;"></ng-md-icon>
+  </md-button>
+
+  <!-- main content area -->
+  <md-content flex>
+
+    <div layout="column" layout-sm="column" layout-align="center center" style="height: 80vh;" ng-show="!isTasksLoaded">
+      <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+      Please wait while we load your tasks
+    </div>
+
+    <ui-view layout="column" ng-show="isTasksLoaded" style="padding-top:50px;" layout-fill layout-padding>
+      <!-- Current Tasks -->
+      <h2 class="inset">Current Tasks</h2>
+      <md-card ng-show="!isCurrentTaskAvailable">
+        <md-card-content>
+          <md-item>
+            <md-item-content layout="row">
+              <div class="main-content">
+                <p>No tasks taken up yet !</p>
+              </div>
+            </md-item-content>
+          </md-item>
+        </md-card-content>
+      </md-card>
+
+      <md-card ng-show="isCurrentTaskAvailable">
+        <md-card-content>
+          <md-list>
+            <md-item ng-repeat="task in user.tasks | filter: showCurrentTasks">
+              <md-item-content>
+                <h3 class="header">{{task.taskName}}</h3>
+                <ng-md-icon icon="access_time" style="fill: #8A8A8A;" size="12"></ng-md-icon>
+                <span class="light">Created on {{task.createdAt | date:'dd/MM/yyyy' }} by {{task.assignerName}}</span>
+                <p class="angular-with-newlines">{{task.taskDescription}}</p>
+                <div style="overflow:auto;">
+                  <p ng-if='task.taskLabels.length > 0' task-labels labels="task.taskLabels" priority="task.taskPriority"></p>
+                  <md-button class="md-raised md-primary" ng-click="complete(task);" style="float: right;">
+                    COMPLETE
+                  </md-button>
+                  <md-button class="md-raised md-primary" ng-click="hold(task);" style="float: right;">
+                    HOLD
+                  </md-button>
+                </div>
+              </md-item-content>
+              <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+              <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+            </md-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
+
+      <!-- Open Tasks -->
+      <h2 class="inset">My Tasks</h2>
+      <md-card ng-show="!isTasksAvailable">
+        <md-card-content>
+          <md-item>
+            <md-item-content layout="row">
+              <div class="main-content">
+                <p>No Tasks added</p>
+              </div>
+            </md-item-content>
+          </md-item>
+        </md-card-content>
+      </md-card>
+
+      <md-card ng-show="isTasksAvailable">
+        <md-card-content>
+          <md-list>
+            <md-item ng-repeat="task in user.tasks | filter: showOpenTasks">
+              <md-item-content>
+                <div flex>
+                  <h3 class="header">{{task.taskName}}</h3>
+                  <ng-md-icon icon="access_time" style="fill: #8A8A8A;" size="12"></ng-md-icon>
+                  <span class="light">Created on {{task.createdAt | date:'dd/MM/yyyy' }} by {{task.assignerName}}</span>
+                  <p class="angular-with-newlines">{{task.taskDescription}}</p>
+                </div>
+              </md-item-content>
+              <div style="overflow:auto;">
+                <p ng-if='task.taskLabels.length > 0' task-labels labels="task.taskLabels" priority="task.taskPriority"></p>
+                <md-button class="md-raised md-primary" ng-click="current(task);" style="float: right;">
+                  TAKE UP TASK
+                </md-button>
+              </div>
+              <br />
+              <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+              <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+            </md-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
+
+    </ui-view>
+  </md-content>
+</div>

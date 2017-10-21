@@ -1,0 +1,32 @@
+{
+  "app_name": "easytm-app",
+  "author": "harshad",
+  "dependencies": {
+    "node-notifier": "5.1.x"
+  },
+  "description": "Desktop webapp",
+  "license": "MIT",
+  "main": "index.html",
+  "name": "easytm-app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0",
+  "window": {
+    "frame": false,
+    "height": 600,
+    "id": "easytm-app",
+    "max_height": 600,
+    "max_width": 1000,
+    "min_height": 300,
+    "min_width": 800,
+    "position": "center",
+    "resizable": true,
+    "show": true,
+    "show_in_taskbar": true,
+    "title": "easytm-app",
+    "toolbar": false,
+    "visible": false,
+    "width": 1000
+  }
+}

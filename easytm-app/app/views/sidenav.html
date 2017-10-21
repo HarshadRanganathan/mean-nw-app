@@ -1,0 +1,49 @@
+<!-- Toolbar -->
+<div ng-controller="NavController" layout="row" class="sticky-header" style="-webkit-app-region: drag">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()">
+        <ng-md-icon icon="menu" style="fill: #fff;"></ng-md-icon>
+      </md-button>
+      <span style="color: #fff;">EasyTM</span>
+      <md-button class="md-icon-button" style="position: absolute; right: 25px; top: 15px;" aria-label="Minimise" ng-click="minimiseWindow()">
+        <ng-md-icon icon="remove" style="fill: #fff;"></ng-md-icon>
+      </md-button>
+      <md-button class="md-icon-button" style="position: absolute; right: 10px; top: 15px;" aria-label="Close" ng-click="closeWindow()">
+        <ng-md-icon icon="close" style="fill: #fff;"></ng-md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+</div>
+
+<!-- Side navigation bar -->
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" ng-cloak>
+  <md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">EASYTM</h1>
+  </md-toolbar>
+  <md-content ng-controller="NavController" ng-init="init();">
+    <md-list>
+      <md-item>
+        <md-button class="md-button md-ink-ripple" flex href="#/task">
+          My Tasks
+        </md-button>
+      </md-item>
+      <md-item>
+        <p>GROUPS</p>
+      </md-item>
+      <md-item ng-repeat="group in groups">
+        <md-button class="md-button md-ink-ripple" href="#/group/{{group._id}}">
+          {{group.groupName}}
+        </md-button>
+      </md-item>
+      <md-item>
+        <div>
+          <md-button class="md-icon-button" aria-label="New Group" ng-click="showNewGroupDialog($event)">
+            <ng-md-icon size="16" icon="add"></ng-md-icon>
+          </md-button>
+          Create new group
+        </div>
+      </md-item>
+    </md-list>
+  </md-content>
+</md-sidenav>

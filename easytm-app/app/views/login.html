@@ -1,0 +1,29 @@
+<div layout="column" layout-sm="column" layout-align="center center" style="height: 80vh;" ng-show="isLoginStarted">
+  <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+  <span ng-show="progressStep == 1">Authenticating credentials</span>
+  <span ng-show="progressStep == 2">Getting details</span>
+  <span ng-show="progressStep == 3">Just a moment</span>
+</div>
+
+<div style="width: 25%; margin: 10% auto;" ng-if="progressStep == 0">
+  <h1 class="title">
+    <span class="title-color-1">Easy</span>
+    <span class="title-color-2">TM</span>
+  </h1>
+  <br/>
+  <br/>
+  <form name="loginForm" layout="column">
+    <md-input-container>
+      <label>User ID</label>
+      <input ng-model="user.id">
+    </md-input-container>
+    <md-input-container>
+      <label>Password</label>
+      <input type="password" ng-model="user.password">
+    </md-input-container>
+    <span ng-show="loginError" style="color: red; text-align: center;">Invalid Password</span>
+    <md-button ng-click="login()" class="md-raised md-primary">
+      Login
+    </md-button>
+  </form>
+</div>

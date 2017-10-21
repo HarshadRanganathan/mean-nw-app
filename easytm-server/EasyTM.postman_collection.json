@@ -1,0 +1,283 @@
+{
+	"variables": [],
+	"info": {
+		"name": "EasyTM",
+		"_postman_id": "51387899-e888-b47b-dc2a-b34ad449a953",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"request": {
+				"url": "localhost:5000/rest/authentication",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"1234\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add New User",
+			"request": {
+				"url": "localhost:5000/user/new",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1234,\n    \"name\": \"TestUser\",\n    \"email\": \"testuser@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details",
+			"request": {
+				"url": "localhost:5000/user/1234",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Check If User Exists",
+			"request": {
+				"url": "localhost:5000/user/search/1234",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List All Users",
+			"request": {
+				"url": "localhost:5000/user/search",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Task",
+			"request": {
+				"url": "localhost:5000/task/new",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1234,\n    \"userName\": \"TestUser\",\n    \"assigneeId\": 1234,\n    \"taskName\": \"Sample Task\",\n    \"description\": \"Sample Task\",\n    \"status\": \"NEW\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List All Tasks",
+			"request": {
+				"url": "http://localhost:5000/task/all",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Task State - CURRENT",
+			"request": {
+				"url": "localhost:5000/task/59e34e45bd5da16c17e3192f/current",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Group",
+			"request": {
+				"url": "localhost:5000/group/new",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1234,\n    \"groupName\": \"TestGroup\",\n    \"users\": [\n    \t{\n    \t\t\"_id\": \"59e34c48bd5da16c17e3192d\"\n    \t}\n    ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Users To Group",
+			"request": {
+				"url": "localhost:5000/group/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"leaderId\": 1234,\n    \"groupId\": \"59e354a4bd5da16c17e31935\",\n    \"users\": [\n    \t{\n    \t\t\"_id\": \"59e34d33bd5da16c17e3192e\"\n    \t}\n    ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Group",
+			"request": {
+				"url": "localhost:5000/group/59e3532fbd5da16c17e31933/delete",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Group Details",
+			"request": {
+				"url": "localhost:5000/group/59e354a4bd5da16c17e31935",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List all groups owned by leader",
+			"request": {
+				"url": "localhost:5000/groups/1234",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMjM0IiwiaWF0IjoxNTA4MDY4MDQ1LCJleHAiOjE1MDgxNTQ0NDV9._ZX2l8eaJvBuuCWSKDL-WSlWyK8ceQi1QyReRxQIj78",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

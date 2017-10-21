@@ -1,0 +1,39 @@
+<md-dialog aria-label="Task dialog" style="width: 60%;" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>New Task</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <form name="taskForm" style="padding: 5%;">
+      <md-input-container class="md-block">
+        <label>Task Name</label>
+        <input name="name" ng-model="task.taskName" ng-pattern="/^[\w]{1,}[\w0-9-\s]+$/">
+        <div ng-messages="taskForm.name.$error">
+          <div ng-message="pattern">Enter valid task name. Allowed characters : [a-z, A-Z, 0-9, -, _]</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Description</label>
+        <textarea name="desc" ng-model="task.description" row="5" md-maxlength="250" ng-pattern="/^[\w0-9\s-.()\n]+$/"></textarea>
+        <div ng-messages="taskForm.desc.$error">
+          <div ng-message="pattern">Invalid characters present</div>
+        </div>
+      </md-input-container>
+      <md-chips ng-model="task.labels" md-separator-keys="keys" placeholder="Task/Project labels" secondary-placeholder="Task/Project labels">
+      </md-chips>
+      <br />
+      <br />
+      <md-checkbox ng-model="task.priority" aria-label="priority">Priority</md-checkbox>
+    </form>
+  </md-dialog-content>
+  <md-dialog-actions layout="row" layout-align="end center">
+    <md-button ng-click="closeDialog()" class="md-primary">
+      Close
+    </md-button>
+    <md-button ng-click="taskForm.$valid && createTask(task)" class="md-primary">
+      Create
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>
