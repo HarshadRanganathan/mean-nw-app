@@ -19,20 +19,20 @@ Download the [postman collection](EasyTM.postman_collection.json) with all the A
 ## REST API's
 
 
-| API           | Type  |   Description |Endpoint    |
-| ------        | ------|   ------      |------      |
-|Authentication |POST   |JWT authentication token   |http://localhost:5000/rest/authentication |
-|Add New User   |POST   |Add new user by providing userId, name and email   |http://localhost:5000/user/new    |
-|Get User Details   |GET    |Returns user information and associated tasks  |http://localhost:5000/user/:userId    |
-|Check If User Exists   |GET    |Boolean asserting if supplied userId exists or not    |http://localhost:5000/user/search/:userId |
-|List All Users |GET    |List all user emails and object id's    |http://localhost:5000/user/search |
-|Add New Task   |POST   |Add a new task to the user. Expected fields: userId, userName, assigneeId, taskName, description, status   | http://localhost:5000/task/new    |
-|List All Tasks |GET    |Lists all tasks with details   |http://localhost:5000/task/all |
-|Update Task State|POST |Change the tasks state to CURRENT, HOLD or COMPLETE   |http://localhost:5000/task/:taskId/current http://localhost:5000/task/:taskId/hold http://localhost:5000/task/:taskId/complete |
-|Add New Group  |POST   |Create a new group and add users. Expected fields: userId, groupName, users (array of user object id's)  |http://localhost:5000/group/new   |
-|Delete Group   |POST   |Delete an existing group  |http://localhost:5000/group/:groupId/delete   |
-|Get Group Details  |GET  |Get details of a particular group | http://localhost:5000/group/:groupId  |
-|List all groups owned by leader    |GET    | Get all groups owned by a person|http://localhost:5000/groups/:leaderId |
+| API                   | Endpoint    |Method       |   Description |
+| ------                | ------      |   ------    |------         |
+|Authentication         |http://localhost:5000/rest/authentication      |POST   |JWT authentication token                                       |
+|Add New User           |http://localhost:5000/user/new                 |POST   |Add new user by providing userId, name and email               |
+|Get User Details       |http://localhost:5000/user/:userId             |GET    |Returns user information and associated tasks                  |
+|Check If User Exists   |http://localhost:5000/user/search/:userId      |GET    |Boolean asserting if supplied userId exists or not             |
+|List All Users         |http://localhost:5000/user/search              |GET    |List all user emails and object id's                           |
+|Add New Task           |http://localhost:5000/task/new                 |POST   |Add a new task to the user. Expected fields: userId, userName, assigneeId, taskName, description, status   | 
+|List All Tasks         |http://localhost:5000/task/all                 |GET    |Lists all tasks with details                                   |
+|Update Task State      |http://localhost:5000/task/:taskId/current http://localhost:5000/task/:taskId/hold http://localhost:5000/task/:taskId/complete |POST |Change the tasks state to CURRENT, HOLD or COMPLETE   |
+|Add New Group          |http://localhost:5000/group/new                |POST   |Create a new group and add users. Expected fields: userId, groupName, users (array of user object id's)  |
+|Delete Group           |http://localhost:5000/group/:groupId/delete    |POST   |Delete an existing group                                        |
+|Get Group Details      |http://localhost:5000/group/:groupId           |GET    |Get details of a particular group                               |
+|List all groups owned by leader|http://localhost:5000/groups/:leaderId |GET    | Get all groups owned by a person                               |
 
 ## API Usage
 
